@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> AskU- Home</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Open+Sans:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">Ask U</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="AllQues.html">Help Others</a></li>
+      <li><a href="AskQue.html">Ask Questions </a></li>
+      <li><a href="MyQuestions.html">My Questions </a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="#" onclick="clearuser()">Logout</a></li>
+      <li class="userprofile"><a href="myprofile.html"><i class="fa-regular fa-user" style="font-size: xx-large;"
+            title="Your Profile"></i></a>
+      </li>
+
+      <li style="float: right;"><a href="myprofile.html"><img src="" class="profile_img my_img1" alt="Profile Image"
+            style=" height: 45px;
+width: 45px;margin-right: 10px;"></a>
+      </li>
+      <!-- <li><a href="login.html" style="float: right;margin-right:5 px;"><i class="fa-solid fa-user"
+            style="font-size: xx-large;" title="Your Profile"></i></a></li> -->
+      <!-- <li id="userprofile"><a href="myprofile.html"><i class="fa-regular fa-user" style="font-size: xx-large;"
+            title="Your Profile"></i></i></a>
+      </li> -->
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to AskU 🫵</h1>
+    <p>Discover, explore, and play with our amazing content!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 AskU- All rights reserved.</p>
+  </footer>
+</body>
+<script>
+  const user = localStorage.getItem("user")
+  if (!user) {
+    location.href = "index.html";
+  }
+
+</script>
+<script src="script.js"></script>
+
+</html>

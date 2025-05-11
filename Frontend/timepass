@@ -1,0 +1,49 @@
+<div class="card mt-4">
+                    <h2 class="card-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti,
+                        laboriosam dolore dicta suscipit nam ab minima architecto voluptate perferendis iusto impedit.
+                        Dicta est totam provident illum assumenda aliquid nostrum corrupti. </h2>
+                    <p class="fs-5" style="font-size:20px;"><i class="fa-solid fa-reply"
+                            style="color: #008CFF;font-size:20px;"></i> Replies
+                    </p>
+                    <div class="answers">
+                        <div style="border: 2px solid black;border-radius:5px;" class="outerdiv">
+                            <div style="flex-grow:15">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem
+                                quas doloremque deleniti placeat maiores labore similique! Ducimus aliquam a natus, ea
+                                ipsum eos beatae odio et, quo culpa blanditiis architecto!
+                                <br><br>
+                                Answer By:
+                            </div>
+                            <div style="flex-grow: 10"> Date 25 may 2025</div>
+                            <div style="flex-grow: 1"> asdads</div>
+                        </div>
+                        <div style="border: 2px solid black;border-radius:5px;" class="outerdiv">
+                            <div style="flex-grow:15">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem
+                                quas doloremque deleniti placeat maiores labore similique! Ducimus aliquam a natus, ea
+                                ipsum eos beatae odio et, quo culpa blanditiis architecto!
+                                <br><br>
+                                Answer By:
+                            </div>
+                            <div style="flex-grow: 10"> Date 25 may 2025</div>
+                            <div style="flex-grow: 1"> asdads</div>
+                        </div>
+                        <div style="border: 2px solid black;border-radius:5px;" class="outerdiv">
+                            <div style="flex-grow:15">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem
+                                quas doloremque deleniti placeat maiores labore similique! Ducimus aliquam a natus, ea
+                                ipsum eos beatae odio et, quo culpa blanditiis architecto!
+                                <br><br>
+                                Answer By:
+                            </div>
+                            <div style="flex-grow: 10"> Date 25 may 2025</div>
+                            <div style="flex-grow: 1"> asdads</div>
+                        </div>
+                        <div style="border: 2px solid black;border-radius:5px;" class="outerdiv">
+                            <h3 style="flex-grow:1">Add Your Answer 👉</h3>
+                            <div style="flex-grow:12">
+                                <textarea name="que" rows="8"></textarea>
+                            </div>
+
+                            <div style="flex-grow: 5"> <button type="submit">Login</button></div>
+                        </div>
+                    </div>
+
+                </div>

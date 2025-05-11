@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AskU - MyQuestions</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <nav>
+    <div class="logo">AskU</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="AllQues.html">Help Others</a></li>
+      <li><a href="AskQue.html">Ask Questions </a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="#" onclick="clearuser()">Logout</a></li>
+      <li class="userprofile"><a href="myprofile.html"><i class="fa-regular fa-user" style="font-size: xx-large;"
+            title="Your Profile"></i></a>
+      </li>
+
+      <li style="float: right;"><a href="myprofile.html"><img src="" class="profile_img my_img1" alt="Profile Image"
+            style=" height: 45px;
+width: 45px;margin-right: 10px;"></a>
+      </li>
+    </ul>
+  </nav>
+  <section class="AskU-section">
+    <div class="AskU-container">
+      <div class="MyQuestions">
+
+
+
+
+      </div>
+    </div>
+  </section>
+  <!-- Edit Modal -->
+  <!-- <div id="edit-modal" class="modal">
+    <div class="modal-content">
+      <h2>Edit Your Question</h2>
+      <textarea id="edit-question-text" rows="5"></textarea>
+      <div class="modal-buttons">
+        <button onclick="saveEditedQuestion()">Save Changes</button>
+        <button onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div> -->
+</body>
+<script>
+  const user = localStorage.getItem("user")
+  if (!user) {
+    location.href = "index.html";
+  }
+
+
+
+</script>
+<script src="script.js"></script>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AskU - MyQuestions</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden
+    }
+
+    #gameMenuContainer {
+      display: flex;
+      align-items: stretch;
+      flex-direction: column;
+      padding: 0;
+    }
+
+    .gameMenu {
+      color: rgb(104, 158, 212);
+      background-color: white;
+
+      height: 30%;
+      padding: 15px;
+      border-radius: 5px;
+      text-align: center;
+      align-items: center;
+      font-size: 25px;
+    }
+
+    .gameMenu a {
+      text-decoration: none;
+      color: black;
+      font-weight: bolder;
+    }
+
+    .gameMenu:hover {
+      background-color: rgb(104, 158, 212);
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">AskU</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="AllQues.html">Help Others</a></li>
+      <li><a href="AskQue.html">Ask Questions </a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="#" onclick="clearuser()">Logout</a></li>
+      <li class="userprofile"><a href="myprofile.html"><i class="fa-regular fa-user" style="font-size: xx-large;"
+            title="Your Profile"></i></a>
+      </li>
+
+      <li style="float: right;"><a href="myprofile.html"><img src="" class="profile_img my_img1" alt="Profile Image"
+            style=" height: 45px;
+width: 45px;margin-right: 10px;"></a>
+      </li>
+    </ul>
+  </nav>
+  <section class="AskU-section" style="height: 70%;margin-top:0">
+    <div class="AskU-container" id="gameMenuContainer" style="background-color: rgba(0, 0, 0, 0.7); margin-top:1px">
+      <embed type="text/html" src="Mini  Game/game2/game2.html" style="height:100%;width:100%;">
+    </div>
+  </section>
+</body>
+<script>
+  const user = localStorage.getItem("user")
+  if (!user) {
+    location.href = "index.html";
+  }
+
+
+
+</script>
+<script src="script.js"></script>
+
+</html>

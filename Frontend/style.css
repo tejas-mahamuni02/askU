@@ -1,0 +1,333 @@
+body {
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #FF007F, #00BFFF);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensure the body takes the full height of the viewport */
+    overscroll-behavior: none;
+    /* Prevent scroll chaining */
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav .logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav .nav-links {
+    list-style: none;
+    padding: 0;
+
+}
+
+nav .nav-links li {
+    display: inline;
+    margin: 0 20px;
+
+}
+
+nav .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+
+
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    /* margin-top: 100px; */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+button {
+    background: #fff;
+    color: #333;
+    border: none;
+    padding: 15px 25px;
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Hero Section Centering */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.hero button {
+    margin-top: 30px;
+}
+
+/* Blog Section Styling */
+.blog {
+    text-align: center;
+    margin: 50px 20px;
+}
+
+.blog-posts {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.blog-post {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.blog-post h3 {
+    font-size: 24px;
+}
+
+.blog-post p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.blog-post .read-more {
+    margin-top: 10px;
+    background: #FF007F;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.blog-post .read-more:hover {
+    background: #00BFFF;
+}
+
+/* Login Section Styling */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-container h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.login-container p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.AskU-section {
+    width: 75%;
+    margin: 10px auto;
+    height: 100vh;
+}
+
+.AskU-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    margin-top: 100px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    overflow-y: scroll;
+    height: 75vh;
+    scrollbar-width: none;
+    /* For Firefox */
+}
+
+.AskU-container h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.AskU-container::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Edge */
+}
+
+/* .questions {
+    overflow-y: scroll;
+    height: 50vh;
+} */
+
+.card {
+    width: 90%;
+    background-color: #fff;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: start;
+    color: #333;
+    font-size: 14px;
+}
+
+.card .answers {
+    font-size: 1rem;
+    width: 100%;
+    height: 300px;
+    margin: 5px auto;
+    padding: 2px;
+    text-align: start;
+    color: #333;
+    overflow-y: scroll;
+}
+
+.outerdiv {
+    font-size: .7rem;
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    align-items: stretch;
+    background-color: #f1f1f1;
+}
+
+.outerdiv>div {
+    /* background-color: DodgerBlue; */
+    color: black;
+    margin: 10px;
+    text-align: start;
+    /* line-height: 75px; */
+    font-size: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    width: 50%;
+    padding: 12px;
+    background-color: #FF007F;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+}
+
+
+button[type="submit"]:hover {
+    background-color: #00BFFF;
+}
+
+
+/* Profile Page Style */
+.profile-left {
+    color: #333;
+    font-weight: bolder;
+}
+
+.profile-left input {
+    color: #333;
+
+    font-size: medium;
+    border: 2px solid;
+}
+
+
+.profile_img {
+    height: 200px;
+    width: 200px;
+    margin: auto;
+    border-radius: 50%;
+    padding: 5px;
+    border: 2px solid #333;
+}
+
+
+/* Disabled state styling */
+button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.signup-prompt {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.signup-prompt a {
+    color: #FF007F;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-prompt a:hover {
+    color: #00BFFF;
+}
+
+#wrong_pass_alert {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+    /* Pushes the footer to the bottom of the page */
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AskU - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav>
+    <div class="logo">AskU</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="AllQues.html">Help Others</a></li>
+      <li><a href="AskQue.html">Ask Questions </a></li>
+      <li><a href="MyQuestions.html">My Questions </a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="#" onclick="clearuser()">Logout</a></li>
+      <li class="userprofile"><a href="myprofile.html"><i class="fa-regular fa-user" style="font-size: xx-large;"
+            title="Your Profile"></i></a>
+      </li>
+
+      <li style="float: right;"><a href="myprofile.html"><img src="" class="profile_img my_img1" alt="Profile Image"
+            style=" height: 45px;
+width: 45px;margin-right: 10px;"></a>
+      </li>
+    </ul>
+  </nav>
+  <section class="AskU-section">
+    <div class="AskU-container">
+
+      <h1> Feel Free To Ask Your Question 😊</h1>
+      <form id="ask-form">
+        <div class="form-group">
+          <textarea name="que" rows="10" onkeyup="checkQue()" id="que" placeholder="Type your question here"
+            required></textarea>
+        </div>
+        <button type="submit" id="submit-btn">Ask Question</button>
+      </form>
+      <p class="signup-prompt" id="accinfo"></p>
+    </div>
+  </section>
+</body>
+<script>
+
+  const user = localStorage.getItem("user")
+  if (!user) {
+    location.href = "index.html";
+  }
+
+</script>
+<script src="script.js"></script>
+
+</html>

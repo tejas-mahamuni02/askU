@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> AskU- Home</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Open+Sans:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .AskU-section {
+      width: 80%;
+      margin: 10px auto;
+      height: 120vh;
+    }
+
+    .AskU-container {
+      margin-top: 5px;
+      min-height: 75%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+    }
+
+    .AskU-container div {
+      margin: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 40px;
+      border-radius: 10px;
+      color: #333;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-left {
+      text-align: center;
+    }
+
+    .profile-right {
+
+      text-align: center;
+    }
+
+    .editDiv {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 5px;
+    }
+
+    #editDiv1 {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 2px;
+    }
+
+    #editDiv1 div {
+      background-color: rgba(190, 184, 184, 0.5);
+      align-items: center;
+      border: 0.5px solid black;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">Ask U</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="AllQues.html">Help Others</a></li>
+      <li><a href="AskQue.html">Ask Questions </a></li>
+      <li><a href="MyQuestions.html">My Questions </a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="#" onclick="clearuser()">Logout</a></li>
+      <li class="userprofile"><a href="myprofile.html"><i class="fa-regular fa-user" style="font-size: xx-large;"
+            title="Your Profile"></i></a>
+      </li>
+
+      <li style="float: right;"><a href="myprofile.html"><img src="" class="profile_img my_img1" alt="Profile Image"
+            style=" height: 45px;
+    width: 45px;margin-right: 10px;"></a>
+      </li>
+      <!-- <li><a href="login.html" style="float: right;margin-right:5 px;"><i class="fa-solid fa-user"
+            style="font-size: xx-large;" title="Your Profile"></i></a></li> -->
+
+
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="AskU-section">
+    <div class="AskU-container">
+      <div class="profile-left" style="flex-grow: 1;">
+
+        <!-- Update DP  -->
+        <div id="imageUploadSection">
+          <h1>Add Profile Image</h1>
+          <form onsubmit="updateImage(event)">
+            <input type="file" id="profileImageInput" accept="image/*" required>
+            <i class="fa-solid fa-xmark" onclick="visibleDPForm()" style="font-size: x-large;float: right;"
+              title="Close Form"></i>
+            <button type="submit">Upload</button>
+          </form>
+        </div>
+
+        <img src="" class="profile_img" id="my_img" alt="Profile Image" style="display: none;">
+        <h3 id="nameField"></h3>
+
+        <!-- Update Email Div -->
+        <div id="emailUploadSection" style="padding: 1px;display: none;">
+          <h1>Add New Email</h1>
+          <form onsubmit="updateEmail(event)" style="padding: 0;">
+            <input type="email" id="profileEmailInput" required><i class="fa-solid fa-xmark"
+              onclick="visibleEmailForm()" style="font-size: x-large;float: right;" title="Close Form"></i><br>
+            <button type="submit" style="margin-top:10px;">Upload</button>
+          </form>
+        </div>
+        <h4 id="emailField">Email:- </h4>
+
+        <!-- Update Mobile Div -->
+        <div id="mobileUploadSection" style="padding: 1px;display: none;">
+          <h1>Add New Phone</h1>
+          <form onsubmit="updateMobile(event)" style="padding: 0;">
+            <input type="text" id="profileMobileInput" pattern="[7-9]{1}[0-9]{9}" required><i class="fa-solid fa-xmark"
+              onclick="visibleMobileForm()" style="font-size: x-large;float: right;" title="Close Form"></i>
+            <button type="submit" style="margin-top:10px;">Upload</button>
+          </form>
+        </div>
+        <h4 id="mobileField">Mobile:- +91 </h4>
+
+        <!-- Update Pass Div -->
+        <div id="passUploadSection" style="padding: 1px;display: none;">
+          <h1>Add New Pass</h1><i class="fa-solid fa-xmark" onclick="visiblePasswordForm()"
+            style="font-size: x-large;float: right;" title="Close Form"></i>
+          <form onsubmit="updatePass(event)" style="padding: 0;">
+            <input type="text" id="oldpass" placeholder="Enter Old Password" onkeyup="validate_old_password()"
+              required><br>
+
+            <input type="password" placeholder="New Password" id="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              onkeyup="validate_password()"
+              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+              required disabled><br>
+            <input type="password" placeholder="Confirm Password" id="confirm_pass" onkeyup="validate_password()"
+              required disabled>
+            <br>
+            <p id="signup-error" class="error-message" style="color: red;"></p>
+            <span id="wrong_pass_alert"></span><br>
+            <input type="checkbox" id="show-password" onclick="togglePasswordVisibility()"> Show Password
+            <button type="submit" style="margin-top:10px;" id="passSubmit" disabled>Upload</button>
+          </form>
+        </div>
+
+
+
+        <!-- Edit Div -->
+        <div class="editDiv">
+          <p><i class="fa-solid fa-pen-to-square" onclick="visibleDPForm()" style="font-size: x-large;"
+              title="Profile Pnoto"></i> <br><br>Edit Image</p>
+
+          <!-- <p><i class="fa-solid fa-pen-to-square" onclick="visibleEmailForm()" style="font-size: x-large;"
+              title="Edit Email"></i><br><br>Edit Email</p> -->
+          <p><i class="fa-solid fa-pen-to-square" onclick="visibleMobileForm()" style="font-size: x-large;"
+              title="Edit Mobile"></i><br><br>Edit Phone</p>
+          <p><i class="fa-solid fa-pen-to-square" onclick="visiblePasswordForm()" style="font-size: x-large;"
+              title="Edit Password"></i><br><br>Edit Pass</p>
+        </div>
+      </div>
+
+      <div class="profile-right" style="flex-grow: 1;">
+        <div id="editDiv1" style="font-size: medium;">
+          <div style="display: flex;justify-content: space-between;padding: 20px;">
+            <h4>Answer Asked By You <i class="fa-solid fa-question" style="font-size: x-large;"></i></h4>
+            <div style="padding:0;width: 200px;">
+              <h4 id="myquecount"></h4>
+            </div>
+          </div>
+          <div style="display: flex;justify-content: space-between;padding: 20px;">
+            <h4>Your Valuable Contribution To Community 🙌
+            </h4>
+            <div style="padding:0;width: 200px;">
+              <h4 id="myanscount"></h4>
+            </div>
+          </div>
+          <div style="display: flex;justify-content: space-between;padding: 20px;">
+            <h4>All Likes Earn By You 😍
+            </h4>
+            <div style="padding:0;width: 200px;">
+              <h4 id="myalllikes"></h4>
+            </div>
+          </div>
+          <div style="display: flex;justify-content: space-between;padding: 20px;">
+            <h4>How % Community likes you <i class="fa-regular fa-heart" style="font-size: x-large;"></i></h4>
+            <div style="padding:0;width: 200px;">
+              <h4 id="avglikes" style="padding:0;margin:0;"></h4>
+            </div>
+
+          </div>
+
+
+        </div>
+        <!-- <div id="myquecount"></div>
+        <div id="myanscount"></div>
+        <div id="myalllikes"></div>
+        <div id="avglikes"></div> -->
+      </div>
+    </div>
+
+  </section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 AskU- All rights reserved.</p>
+  </footer>
+</body>
+<script>
+  const user = localStorage.getItem("user")
+  if (!user) {
+    location.href = "index.html";
+  }
+  const user1 = JSON.parse(localStorage.getItem("user"));
+  document.getElementById("emailField").innerHTML += user1.email
+  document.getElementById("nameField").innerHTML += user1.uname
+  document.getElementById("mobileField").innerHTML += user1.mobile
+
+
+
+
+  function validate_old_password() {
+
+    let pass = document.getElementById('pass').value;
+    let confirm_pass = document.getElementById('confirm_pass').value;
+    let oldpass = document.getElementById('oldpass').value;
+    let submitButton = document.getElementById('passSubmit');
+    if (oldpass == user1.pass) {
+      document.getElementById('pass').disabled = false
+      document.getElementById('confirm_pass').disabled = false
+      document.getElementById('wrong_pass_alert').style.color = '#48f542';
+      document.getElementById('wrong_pass_alert').innerHTML =
+        ' Password Matched Now Enter New Pass';
+      document.getElementById('confirm_pass').style.borderColor = "green";
+      document.getElementById('confirm_pass').style.border = "5px";
+
+    }
+    else {
+      document.getElementById('wrong_pass_alert').style.color = 'red';
+      document.getElementById('wrong_pass_alert').innerHTML
+        = ' Enter Correct Old password ';
+      document.getElementById('confirm_pass').style.borderColor = "red";
+      document.getElementById('confirm_pass').style.border = "5px";
+      pass.disabled = true
+      confirm_pass.disabled = true
+      submitButton.disabled = true
+    }
+
+  }
+  function validate_password() {
+
+    let pass = document.getElementById('pass').value;
+    let confirm_pass = document.getElementById('confirm_pass').value;
+    let oldpass = document.getElementById('oldpass').value;
+    let submitButton = document.getElementById('passSubmit');
+    if (pass == oldpass) {
+
+      document.getElementById('wrong_pass_alert').style.color = 'red';
+      document.getElementById('wrong_pass_alert').innerHTML
+        = ' Enter Enter New Pass ';
+      document.getElementById('confirm_pass').style.borderColor = "red";
+      document.getElementById('confirm_pass').style.border = "5px";
+      submitButton.disabled = true
+    }
+    else {
+      if (pass != confirm_pass) {
+        document.getElementById('wrong_pass_alert').style.color = 'red';
+        document.getElementById('wrong_pass_alert').innerHTML
+          = ' Enter same password';
+        document.getElementById('confirm_pass').style.borderColor = "red";
+        document.getElementById('confirm_pass').style.border = "5px";
+        submitButton.disabled = true
+      } else {
+
+        document.getElementById('wrong_pass_alert').style.color = '#48f542';
+        document.getElementById('wrong_pass_alert').innerHTML =
+          ' Password Matched';
+        document.getElementById('confirm_pass').style.borderColor = "green";
+        document.getElementById('confirm_pass').style.border = "5px";
+        submitButton.disabled = false
+      }
+
+    }
+  }
+
+  function wrong_pass_alert() {
+    if (document.getElementById('pass').value != "" &&
+      document.getElementById('confirm_pass').value != "") {
+      alert("Your response is submitted");
+    } else {
+      alert("Please fill all the fields");
+    }
+  }
+
+
+</script>
+<script src="script.js"></script>
+
+</html>

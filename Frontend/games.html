@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AskU - MyQuestions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #gameMenuContainer {
+            display: flex;
+            align-items: stretch;
+            flex-direction: column;
+        }
+
+        .gameMenu {
+            color: rgb(104, 158, 212);
+            background-color: white;
+
+            height: 30%;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            align-items: center;
+            font-size: 25px;
+        }
+
+        .gameMenu a {
+            text-decoration: none;
+            color: rgb(20, 2, 2);
+            font-weight: bolder;
+        }
+
+        .gameMenu:hover {
+            background-color: rgb(104, 158, 212);
+            color: white;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">AskU</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="AllQues.html">Help Others</a></li>
+            <li><a href="AskQue.html">Ask Questions </a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="#" onclick="clearuser()">Logout</a></li>
+            <li class="userprofile"><a href="myprofile.html"><i class="fa-regular fa-user" style="font-size: xx-large;"
+                        title="Your Profile"></i></a>
+            </li>
+
+            <li style="float: right;"><a href="myprofile.html"><img src="" class="profile_img my_img1"
+                        alt="Profile Image" style=" height: 45px;
+width: 45px;margin-right: 10px;"></a>
+            </li>
+        </ul>
+    </nav>
+    <section class="AskU-section">
+        <div class="AskU-container" id="gameMenuContainer"
+            style="background-color: rgba(0, 0, 0, 0.7); margin-top:30px">
+            <div class="gameMenu"
+                style="background: url('/Frontend/images/snake.jpg') no-repeat  center ; background-size: contain;">
+                <a href="game1.html"><br><br> Snake Game</a>
+            </div>
+            <div class="gameMenu"
+                style="background: url('/Frontend/images/stone_paper_scissor.png') no-repeat  center ; background-size: contain;">
+                <a href="game2.html"><br><br>Rock Paper Scissor</a>
+            </div>
+            <div class="gameMenu"
+                style="background: url('/Frontend/images/fruit_slicer.jpg') no-repeat  center ; background-size: contain;">
+                <a href="game3.html" style=" color: rgb(254, 254, 254);"><br><br>Fruit Slicer</a>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    const user = localStorage.getItem("user")
+    if (!user) {
+        location.href = "index.html";
+    }
+
+
+
+</script>
+<script src="script.js"></script>
+
+</html>

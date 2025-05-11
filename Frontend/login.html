@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AskU - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">AskU</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Help Others</a></li>
+            <li><a href="login.html">Games</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <section class="login-section">
+        <div class="login-container">
+            <h1>Login to AskU 🫵</h1>
+            <form id="login-form" method="get">
+                <div class="form-group">
+                    <input type="email" placeholder="Email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" id="pass" required>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="show-password" onclick="togglePasswordVisibility()"> Show Password
+                    <p id="login-error" class="error-message" style="color: yellow;"></p>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p class="signup-prompt" id="accinfo"></p>
+            <p class="signup-prompt">Don't have an account? <a href="signup.html">Sign up here</a></p>
+        </div>
+    </section>
+</body>
+<script>
+    var msg = localStorage.getItem("msg");
+    if (msg === "true") {
+        document.getElementById("accinfo").innerHTML = "Account Created Successfully 🤩"
+        localStorage.removeItem("msg");
+    }
+    const user = localStorage.getItem("user")
+    if (user) {
+        location.href = "userhome.html";
+    }
+</script>
+<script src="script.js"></script>
+
+</html>
